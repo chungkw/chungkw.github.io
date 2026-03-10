@@ -30,8 +30,39 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
 
-        <div class="container">
-            <h1>Hello world!</h1>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="container">
+                <h1>Hello world!</h1>
+                <h1>My name is Kin Wai.</h1>
+
+                <h2>I like to write code to solve problems.</h2>
+
+                <h3 id="uses">I use JavaScript.</h3>
+            </div>
         </div>
     </body>
+
+    <script>
+        const technologies = [
+            "JavaScript",
+            "Python",
+            "Rust",
+            "C#",
+            "SQL",
+            "HTML",
+            "CSS",
+            "React",
+            "Astro",
+            "NodeJS",
+        ];
+
+        const element = document.querySelector("#uses");
+
+        setInterval(() => {
+            const tech =
+                technologies[Math.floor(Math.random() * technologies.length)];
+
+            element && (element.textContent = `I use ${tech}.`);
+        }, 2000);
+    </script>
 </html>
