@@ -15,7 +15,7 @@ const { title, icon, description, links } = Astro.props;
             </p>
 
             {
-                links.map(({ url, label }) => (
+                links.map(({ url = "#", label = "" }) => (
                     <a
                         href={url}
                         class="btn btn-primary mt-auto"
