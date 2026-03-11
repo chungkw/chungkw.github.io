@@ -66,7 +66,7 @@
 
         async function sleep(ms) {
             return new Promise((resolve) => {
-                setInterval(() => resolve(), ms);
+                setTimeout(() => resolve(), ms);
             });
         }
 
