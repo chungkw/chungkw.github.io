@@ -4,28 +4,32 @@ const { title, icon, description, links } = Astro.props;
 
 <div class="card card-height">
     <div class="card-body">
-        <div class="d-flex flex-column align-items-start h-100">
+        <div
+            class="d-flex flex-column align-items-start justify-content-between h-100"
+        >
             <h4 class="card-title">
                 <i class={`bi ${icon}`}></i>
                 {title}
             </h4>
 
-            <p class="card-text mt-auto">
+            <p class="card-text">
                 {description}
             </p>
 
-            {
-                links.map(({ url = "#", label = "" }) => (
-                    <a
-                        href={url}
-                        class="btn btn-primary mt-auto"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {label}
-                    </a>
-                ))
-            }
+            <div class="d-flex gap-2">
+                {
+                    links.map(({ url = "#", label = "" }) => (
+                        <a
+                            href={url}
+                            class="btn btn-primary "
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {label}
+                        </a>
+                    ))
+                }
+            </div>
         </div>
     </div>
 </div>
