@@ -1,5 +1,9 @@
 ---
-import Carousel from "../components/Carousel.astro";
+import ContactAnchor from "../components/ContactAnchor.astro";
+import ProjectFeature from "../components/ProjectFeature.astro";
+
+import { contacts } from "../data/contacts";
+import { projects } from "../data/projects";
 ---
 
 <html lang="en">
@@ -39,17 +43,25 @@ import Carousel from "../components/Carousel.astro";
 
         <div class="centre">
             <div class="container my-4">
-                <div class="mb-3">
-                    <h1>Hello world!</h1>
-                    <h1>My name is Kin Wai.</h1>
+                <h1>
+                    Hello world!<br />
+                    My name is Kin Wai.
+                </h1>
+
+                <h2>I like to write code to solve problems.</h2>
+                <h2 id="uses">I use JavaScript.</h2>
+
+                <hr />
+
+                <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
+                    {contacts.map((contact) => <ContactAnchor {...contact} />)}
                 </div>
 
-                <div class="mb-3">
-                    <h2>I like to write code to solve problems.</h2>
-                    <h2 id="uses">I use JavaScript.</h2>
-                </div>
+                <hr />
 
-                <Carousel />
+                <h3>My Projects</h3>
+
+                {projects.map((project) => <ProjectFeature {...project} />)}
             </div>
         </div>
     </body>

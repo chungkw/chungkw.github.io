@@ -1,0 +1,8 @@
+---
+const { name, icon, link } = Astro.props;
+---
+
+<a href={link} class="btn btn-dark">
+    <i class={`bi ${icon}`}></i>
+    &nbsp;{name}
+</a>
