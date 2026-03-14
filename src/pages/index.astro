@@ -1,4 +1,5 @@
 ---
+import PopoverText from "../components/PopoverText.astro";
 import ContactAnchor from "../components/ContactAnchor.astro";
 import ProjectFeature from "../components/ProjectFeature.astro";
 
@@ -44,11 +45,29 @@ import { projects } from "../data/projects";
         <div class="centre">
             <div class="container my-4">
                 <h1>
-                    Hello world!<br />
-                    My name is Kin Wai.
+                    <PopoverText
+                        text="Hello world!"
+                        popupText="Common phrase present in computer programs, displayed when a program is run."
+                    />
                 </h1>
 
-                <h2>I like to write code to solve problems.</h2>
+                <h1>
+                    My name is <PopoverText
+                        text="Kin Wai"
+                        popupText="My full name is Chung Kin Wai."
+                    />.
+                </h1>
+
+                <h2>
+                    I like to <PopoverText
+                        text="write code"
+                        popupText="Organic, free-range, hand-written code is what I like to write."
+                    /> to <PopoverText
+                        text="solve problems"
+                        popupText="Such as cracking an egg."
+                    />.
+                </h2>
+
                 <h2 id="uses">I use JavaScript.</h2>
 
                 <hr />
@@ -75,6 +94,18 @@ import { projects } from "../data/projects";
         min-height: 100dvh;
     }
 </style>
+
+<script>
+    // Initialise popovers
+    const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]',
+    );
+
+    [...popoverTriggerList].map(
+        //@ts-ignore
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
+    );
+</script>
 
 <script>
     const technologies = [
