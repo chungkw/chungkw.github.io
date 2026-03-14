@@ -65,54 +65,54 @@ import { projects } from "../data/projects";
             </div>
         </div>
     </body>
-
-    <style>
-        .centre {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100dvh;
-        }
-    </style>
-
-    <script is:inline async type="module">
-        const technologies = [
-            "JavaScript",
-            "Python",
-            "Rust",
-            "C#",
-            "SQL",
-            "HTML",
-            "CSS",
-            "React",
-            "Astro",
-            "NodeJS",
-        ];
-
-        async function sleep(ms) {
-            return new Promise((resolve) => {
-                setTimeout(() => resolve(), ms);
-            });
-        }
-
-        const element = document.querySelector("#uses");
-
-        let i = 0;
-
-        while (true) {
-            if (i >= technologies.length) {
-                i = 0;
-            }
-
-            const tech = technologies[i];
-
-            if (element) {
-                element.textContent = `I use ${tech}.`;
-            }
-
-            i += 1;
-
-            await sleep(1500);
-        }
-    </script>
 </html>
+
+<style>
+    .centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100dvh;
+    }
+</style>
+
+<script>
+    const technologies = [
+        "JavaScript",
+        "Python",
+        "Rust",
+        "C#",
+        "SQL",
+        "HTML",
+        "CSS",
+        "React",
+        "Astro",
+        "NodeJS",
+    ];
+
+    function sleep(ms: number) {
+        return new Promise<void>((resolve) => {
+            setTimeout(() => resolve(), ms);
+        });
+    }
+
+    const element = document.querySelector("#uses");
+
+    let i = 0;
+
+    while (true) {
+        if (i >= technologies.length) {
+            i = 0;
+        }
+
+        const tech = technologies[i];
+
+        if (element) {
+            element.textContent = `I use ${tech}.`;
+        }
+
+        i += 1;
+
+        await sleep(1500);
+    }
+</script>
