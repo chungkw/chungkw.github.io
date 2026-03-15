@@ -43,7 +43,7 @@ import { projects } from "../data/projects";
             crossorigin="anonymous"></script>
 
         <div class="centre">
-            <div class="container my-4">
+            <main class="container my-4">
                 <h1>
                     <PopoverText
                         text="Hello world!"
@@ -81,7 +81,7 @@ import { projects } from "../data/projects";
                 <h3>My Projects</h3>
 
                 {projects.map((project) => <ProjectFeature {...project} />)}
-            </div>
+            </main>
         </div>
     </body>
 </html>
