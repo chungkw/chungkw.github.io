@@ -35,6 +35,10 @@ export const projects = [
             {
                 url: "https://github.com/chungkw/sequelize_tutorial",
                 label: "GitHub Repo",
+            },
+            {
+                url: "https://chungkw.github.io/sequelize_tutorial/",
+                label: "See Tutorial",
             }
         ]
     },
