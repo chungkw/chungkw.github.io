@@ -42,58 +42,47 @@ import { projects } from "../data/projects";
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
 
-        <div class="centre">
-            <main class="container my-4">
-                <h1>
-                    <PopoverText
-                        text="Hello world!"
-                        popupText="Common phrase present in computer programs, displayed when a program is run."
-                    />
-                </h1>
+        <main class="container my-4">
+            <h1>
+                <PopoverText
+                    text="Hello world!"
+                    popupText="Common phrase present in computer programs, displayed when a program is run."
+                />
+            </h1>
 
-                <h1>
-                    My name is <PopoverText
-                        text="Kin Wai"
-                        popupText="My full name is Chung Kin Wai."
-                    />.
-                </h1>
+            <h1>
+                My name is <PopoverText
+                    text="Kin Wai"
+                    popupText="My full name is Chung Kin Wai."
+                />.
+            </h1>
 
-                <h2>
-                    I like to <PopoverText
-                        text="write code"
-                        popupText="Organic, free-range, hand-written code is what I like to write."
-                    /> to <PopoverText
-                        text="solve problems"
-                        popupText="Such as cracking an egg."
-                    />.
-                </h2>
+            <h2>
+                I like to <PopoverText
+                    text="write code"
+                    popupText="Organic, free-range, hand-written code is what I like to write."
+                /> to <PopoverText
+                    text="solve problems"
+                    popupText="Such as cracking an egg."
+                />.
+            </h2>
 
-                <h2 id="uses">I use JavaScript.</h2>
+            <h2 id="uses">I use JavaScript.</h2>
 
-                <hr />
+            <hr />
 
-                <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
-                    {contacts.map((contact) => <ContactAnchor {...contact} />)}
-                </div>
+            <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
+                {contacts.map((contact) => <ContactAnchor {...contact} />)}
+            </div>
 
-                <hr />
+            <hr />
 
-                <h3>My Projects</h3>
+            <h3>My Projects</h3>
 
-                {projects.map((project) => <ProjectFeature {...project} />)}
-            </main>
-        </div>
+            {projects.map((project) => <ProjectFeature {...project} />)}
+        </main>
     </body>
 </html>
-
-<style>
-    .centre {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100dvh;
-    }
-</style>
 
 <script>
     // Initialise popovers
