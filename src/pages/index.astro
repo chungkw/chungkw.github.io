@@ -1,4 +1,6 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 import PopoverText from "../components/PopoverText.astro";
 import ContactAnchor from "../components/ContactAnchor.astro";
 import ProjectFeature from "../components/ProjectFeature.astro";
@@ -7,94 +9,47 @@ import { contacts } from "../data/contacts";
 import { projects } from "../data/projects";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
+<BaseLayout title="Hello World">
+    <main class="container my-4">
+        <h1>
+            <PopoverText
+                text="Hello world!"
+                popupText="Common phrase present in computer programs, displayed when a program is run."
+            />
+        </h1>
 
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
+        <h1>
+            My name is <PopoverText
+                text="Kin Wai"
+                popupText="My full name is Chung Kin Wai."
+            />.
+        </h1>
 
-        <!-- Bootstrap CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
-        />
+        <h2>
+            I like to <PopoverText
+                text="write code"
+                popupText="Organic, free-range, hand-written code is what I like to write."
+            /> to <PopoverText
+                text="solve problems"
+                popupText="Such as cracking an egg."
+            />.
+        </h2>
 
-        <!-- Bootstrap Icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-        />
+        <h2 id="uses">I use JavaScript.</h2>
 
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+        <hr />
 
-        <title>Hello World</title>
-    </head>
+        <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
+            {contacts.map((contact) => <ContactAnchor {...contact} />)}
+        </div>
 
-    <body>
-        <!-- Bootstrap JS -->
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
+        <hr />
 
-        <main class="container my-4">
-            <h1>
-                <PopoverText
-                    text="Hello world!"
-                    popupText="Common phrase present in computer programs, displayed when a program is run."
-                />
-            </h1>
+        <h3>My Projects</h3>
 
-            <h1>
-                My name is <PopoverText
-                    text="Kin Wai"
-                    popupText="My full name is Chung Kin Wai."
-                />.
-            </h1>
-
-            <h2>
-                I like to <PopoverText
-                    text="write code"
-                    popupText="Organic, free-range, hand-written code is what I like to write."
-                /> to <PopoverText
-                    text="solve problems"
-                    popupText="Such as cracking an egg."
-                />.
-            </h2>
-
-            <h2 id="uses">I use JavaScript.</h2>
-
-            <hr />
-
-            <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
-                {contacts.map((contact) => <ContactAnchor {...contact} />)}
-            </div>
-
-            <hr />
-
-            <h3>My Projects</h3>
-
-            {projects.map((project) => <ProjectFeature {...project} />)}
-        </main>
-    </body>
-</html>
-
-<script>
-    // Initialise popovers
-    const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]',
-    );
-
-    [...popoverTriggerList].map(
-        //@ts-ignore
-        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
-    );
-</script>
+        {projects.map((project) => <ProjectFeature {...project} />)}
+    </main>
+</BaseLayout>
 
 <script>
     const technologies = [
