@@ -1,11 +1,28 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = posts.sort(
+    // Newest first
+    (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf(),
+);
 ---
 
 <BaseLayout title="Blog">
     <main class="container my-4">
         <h1>This is my blog.</h1>
 
-        <p><a href="/blog/MyFirstPost">See my first post.</a></p>
+        <ul>
+            {
+                sortedPosts.map((post) => (
+                    <li>
+                        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                    </li>
+                ))
+            }
+        </ul>
     </main>
 </BaseLayout>
