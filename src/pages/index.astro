@@ -1,55 +1,66 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import PopoverText from "../components/PopoverText.astro";
+import Header from "../components/Header.astro";
+import Popover from "../components/Popover.astro";
 import ContactAnchor from "../components/ContactAnchor.astro";
-import ProjectFeature from "../components/ProjectFeature.astro";
 
 import { contacts } from "../content/contacts";
-import { projects } from "../content/projects";
 ---
 
 <BaseLayout title="Hello World">
-    <main class="container my-4">
-        <h1>
-            <PopoverText
-                text="Hello world!"
-                popupText="Common phrase present in computer programs, displayed when a program is run."
-            />
-        </h1>
+    <div class="d-flex flex-column vh-100">
+        <Header />
 
-        <h1>
-            My name is <PopoverText
-                text="Kin Wai"
-                popupText="My full name is Chung Kin Wai."
-            />.
-        </h1>
+        <main class="flex-grow-1 container">
+            <div class="d-flex align-items-center w-100 h-100">
+                <div class="flex-fill p-3 border rounded rounded-3">
+                    <h1>
+                        <Popover
+                            text="Hello world!"
+                            popupText="Common phrase present in computer programs, displayed when a program is run."
+                        />
+                    </h1>
 
-        <h2>
-            I like to <PopoverText
-                text="write code"
-                popupText="Organic, free-range, hand-written code is what I like to write."
-            /> to <PopoverText
-                text="solve problems"
-                popupText="Such as cracking an egg."
-            />.
-        </h2>
+                    <h1>
+                        My name is <Popover
+                            text="Kin Wai"
+                            popupText="My full name is Chung Kin Wai."
+                        />.
+                    </h1>
 
-        <h2 id="uses">I use JavaScript.</h2>
+                    <h2>
+                        I like to <Popover
+                            text="write code"
+                            popupText="Organic, free-range, hand-written code is what I like to write."
+                        /> to <Popover
+                            text="solve problems"
+                            popupText="Such as cracking an egg."
+                        />.
+                    </h2>
 
-        <hr />
+                    <h2 id="uses">I use JavaScript.</h2>
 
-        <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
-            {contacts.map((contact) => <ContactAnchor {...contact} />)}
-        </div>
+                    <hr />
 
-        <hr />
-
-        <h3>My Projects</h3>
-
-        {projects.map((project) => <ProjectFeature {...project} />)}
-    </main>
+                    <div class="d-flex gap-2 text-nowrap flex-wrap">
+                        {
+                            contacts.map((contact) => (
+                                <ContactAnchor {...contact} />
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </BaseLayout>
+
+<style>
+    .vh-100 {
+        min-height: 100dvh;
+    }
+</style>
 
 <script>
     const technologies = [

@@ -1,0 +1,23 @@
+---
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+
+// From the Astro blog template
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^\/]+/g);
+
+const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
+---
+
+<li class="nav-item">
+    <a
+        class:list={["nav-link", { active: isActive }]}
+        href={href}
+        aria-current={isActive ? "page" : undefined}
+    >
+        <slot />
+    </a>
+</li>

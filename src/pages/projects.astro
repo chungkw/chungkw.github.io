@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Header from "../components/Header.astro";
+import ProjectFeature from "../components/ProjectFeature.astro";
+
+import { projects } from "../content/projects";
+---
+
+<BaseLayout title="Hello World">
+    <Header />
+
+    <main class="container">
+        {projects.map((project) => <ProjectFeature {...project} />)}
+    </main>
+</BaseLayout>

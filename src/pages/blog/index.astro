@@ -1,4 +1,5 @@
 ---
+import Header from "../../components/Header.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import { getCollection } from "astro:content";
@@ -12,7 +13,9 @@ const sortedPosts = posts.sort(
 ---
 
 <BaseLayout title="Blog">
-    <main class="container my-4">
+    <Header />
+
+    <main class="container">
         <h1>This is my blog.</h1>
 
         <ul>

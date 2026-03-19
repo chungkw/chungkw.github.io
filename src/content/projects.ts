@@ -1,4 +1,15 @@
-export const projects = [
+export interface Project {
+    title: string;
+    icon: string
+    description: string
+    technologies: string[]
+    links: {
+        url: string;
+        label: string;
+    }[]
+}
+
+export const projects: Project[] = [
     {
         title: "Discord Bot",
         icon: "bi-discord",
