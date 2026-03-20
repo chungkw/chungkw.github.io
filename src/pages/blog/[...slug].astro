@@ -1,5 +1,5 @@
 ---
-import MdLayout from "../../layouts/MdLayout.astro";
+import BlogMdLayout from "../../layouts/BlogMdLayout.astro";
 
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
@@ -19,6 +19,6 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<MdLayout {...post.data}>
+<BlogMdLayout {...post.data}>
     <Content />
-</MdLayout>
+</BlogMdLayout>

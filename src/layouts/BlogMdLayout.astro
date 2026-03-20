@@ -1,0 +1,48 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+import Header from "../components/Header.astro";
+
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, createdAt } = Astro.props;
+
+let createdAtStr = `${createdAt.getDate()}/${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`;
+---
+
+<BaseLayout title={title}>
+    <Header />
+
+    <main class="container">
+        <div class="d-flex justify-content-center">
+            <article class="reading-width">
+                <h2>{title}</h2>
+
+                <p>{createdAtStr}</p>
+
+                <hr />
+
+                <slot />
+            </article>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    .reading-width {
+        max-width: 80ch;
+    }
+</style>
+
+<style is:inline>
+    img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 80ch;
+        width: auto;
+        height: auto;
+    }
+</style>
