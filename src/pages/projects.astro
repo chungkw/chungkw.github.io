@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Header from "../components/Header.astro";
-import ProjectFeature from "../components/ProjectFeature.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 import { projects } from "../content/projects";
 ---
@@ -11,6 +11,6 @@ import { projects } from "../content/projects";
     <Header />
 
     <main class="container">
-        {projects.map((project) => <ProjectFeature {...project} />)}
+        {projects.map((project) => <ProjectCard {...project} />)}
     </main>
 </BaseLayout>

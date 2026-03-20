@@ -1,6 +1,7 @@
 ---
-import Header from "../../components/Header.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import BlogCard from "../../components/BlogCard.astro";
 
 import { getCollection } from "astro:content";
 
@@ -18,14 +19,20 @@ const sortedPosts = posts.sort(
     <main class="container">
         <h1>This is my blog.</h1>
 
-        <ul>
-            {
-                sortedPosts.map((post) => (
-                    <li>
-                        <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                    </li>
-                ))
-            }
-        </ul>
+        <p>
+            It consists of various things I have done which I think are worthy
+            to be shared.
+        </p>
+
+        {
+            sortedPosts.map((post) => (
+                <a
+                    href={`/blog/${post.id}`}
+                    class="d-block text-reset text-decoration-none"
+                >
+                    <BlogCard {...post.data} />
+                </a>
+            ))
+        }
     </main>
 </BaseLayout>

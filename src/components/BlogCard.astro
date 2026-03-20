@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, createdAt } = Astro.props;
+
+let createdAtStr = `${createdAt.getDate()}/${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`;
+---
+
+<div class="mb-3 p-3 border rounded rounded-3">
+    <h3>{title}</h3>
+
+    <p class="my-3">{createdAtStr}</p>
+
+    <p class="m-0"><span class="fst-italic">{description}</span></p>
+</div>
