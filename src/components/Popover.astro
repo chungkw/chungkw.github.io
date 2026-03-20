@@ -7,8 +7,14 @@ interface Props {
 const { text, popupText } = Astro.props;
 ---
 
+<style>
+    .ws-nowrap {
+        white-space: nowrap;
+    }
+</style>
+
 <a
-    class="text-reset text-decoration-none bg-warning bg-opacity-50"
+    class="text-reset text-decoration-none ws-nowrap bg-warning bg-opacity-50"
     role="button"
     tabindex="0"
     data-bs-container="body"
