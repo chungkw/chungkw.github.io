@@ -1,6 +1,6 @@
 ---
 title: "Syncing your phone's pictures shouldn't be so complicated"
-description: "A simple way to get started"
+description: "A simple way to get started without the cloud"
 createdAt: "2026/03/20"
 ---
 
