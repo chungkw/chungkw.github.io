@@ -1,0 +1,19 @@
+---
+import { contacts } from "../content/contacts";
+---
+
+<footer class="container py-3 mb-3">
+    <div class="p-3 border rounded rounded-3 bg-white text-center">
+        <p>Written by Kin Wai</p>
+
+        <div class="d-flex gap-3 text-nowrap flex-wrap justify-content-center">
+            {
+                contacts.map(({ name, icon, link }) => (
+                    <a href={link} class="text-reset text-decoration-none">
+                        <i class={`bi ${icon}`} /> {name}
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</footer>
