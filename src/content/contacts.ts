@@ -5,16 +5,6 @@ export interface Contact {
 }
 
 export const contacts: Contact[] = [
-    // {
-    //     name: "Projects",
-    //     icon: "bi-braces",
-    //     link: "/projects"
-    // },
-    // {
-    //     name: "Blog",
-    //     icon: "bi-newspaper",
-    //     link: "/blog"
-    // },
     {
         name: "GitHub",
         icon: "bi-github",
