@@ -1,5 +1,5 @@
 ---
-import type { Project } from "../content/projects";
+import type { Project } from "../../content/projects";
 
 type Props = Project;
 
@@ -9,7 +9,11 @@ const { title, icon, description, technologies, links } = Astro.props;
 <div class="mb-3 p-3 border rounded rounded-3 bg-white">
     <div class="row">
         <div class="col">
-            <h3><i class={`bi ${icon}`}></i>&nbsp;{title}</h3>
+            <h3>
+                <span class="icon">
+                    <i class={`bi ${icon}`}></i>
+                </span>{title}
+            </h3>
         </div>
 
         <div class="col-md-7 col-lg-8">
@@ -18,7 +22,7 @@ const { title, icon, description, technologies, links } = Astro.props;
             <div class="d-flex flex-wrap gap-2 mb-2 text-nowrap">
                 {
                     technologies.map((tech) => (
-                        <div class="badge rounded-pill text-bg-dark font-monospace">
+                        <div class="badge rounded-pill text-bg-light border border-dark-subtle font-monospace">
                             {tech}
                         </div>
                     ))
@@ -42,3 +46,10 @@ const { title, icon, description, technologies, links } = Astro.props;
         </div>
     </div>
 </div>
+
+<style>
+    .icon {
+        margin-right: 0.4rem;
+        vertical-align: text-bottom;
+    }
+</style>
