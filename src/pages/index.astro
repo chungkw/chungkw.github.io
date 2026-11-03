@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Header from "../components/Header.astro";
-import Popover from "../components/home/Popover.astro";
-import ContactAnchor from "../components/home/ContactAnchor.astro";
+import Pop from "../components/about/Popover.astro";
+import ContactAnchor from "../components/about/ContactAnchor.astro";
 
 import { contacts } from "../content/contacts";
 ---
@@ -16,27 +16,26 @@ import { contacts } from "../content/contacts";
             <div class="d-flex align-items-center w-100 h-100">
                 <div class="flex-fill p-3 border rounded rounded-3 bg-white">
                     <h1>
-                        <Popover
-                            text="Hello world!"
+                        <Pop
                             popupText="Common phrase present in computer programs, displayed when a program is run."
-                        />
+                            >Hello world!</Pop
+                        >
                     </h1>
 
                     <h1>
-                        My name is <Popover
-                            text="Kin Wai"
+                        My name is <Pop
                             popupText="My full name is Chung Kin Wai."
-                        />.
+                            >Kin Wai</Pop
+                        >.
                     </h1>
 
                     <h2>
-                        I like to <Popover
-                            text="write code"
+                        I like to <Pop
                             popupText="Organic, free-range, hand-written code is what I like to write."
-                        /> to <Popover
-                            text="solve problems"
-                            popupText="Such as cracking an egg."
-                        />.
+                            >write code</Pop
+                        > to <Pop popupText="Such as cracking an egg."
+                            >solve problems</Pop
+                        >.
                     </h2>
 
                     <h2 id="uses">I use JavaScript.</h2>

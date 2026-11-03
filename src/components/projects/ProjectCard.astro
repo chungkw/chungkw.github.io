@@ -22,7 +22,7 @@ const { title, icon, description, technologies, links } = Astro.props;
             <div class="d-flex flex-wrap gap-2 mb-2 text-nowrap">
                 {
                     technologies.map((tech) => (
-                        <div class="badge rounded-pill text-bg-light border border-dark-subtle font-monospace">
+                        <div class="badge rounded-pill text-bg-light border border-dark-subtle mono">
                             {tech}
                         </div>
                     ))
@@ -51,5 +51,9 @@ const { title, icon, description, technologies, links } = Astro.props;
     .icon {
         margin-right: 0.4rem;
         vertical-align: text-bottom;
+    }
+
+    .mono {
+        font-family: var(--font-jetbrains-mono);
     }
 </style>
