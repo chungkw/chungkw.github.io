@@ -31,9 +31,11 @@ Remove the broken piece of cable by removing it from the socket on the motherboa
 
 Using sandpaper, carefully expose the copper traces on the remaining ribbon cable. I used a piece of cardboard behind the cable, with the cable taped down, to keep it in place and protect other components. I used the sandpaper to remove the plastic encasing the copper traces, about 3mm from the edge. You can compare it with the broken piece to judge the length of the trace required to be exposed.
 
-Have a bright light nearby, and you will be able to tell that the copper trace is exposed when it appears shiny.
+> [!tip]
+> Have a bright light nearby, and you will be able to tell that the copper trace is exposed when it appears shiny.
 
-Do it slowly, and check frequently. You don't want to remove too much material such that you lose the copper traces too.
+> [!warning]
+> Do it slowly, and check frequently. You don't want to remove too much material such that you lose the copper traces too.
 
 Wipe the cable clean and dry, then carefully bend the now much shorter cable over itself and plug it into the socket on the motherboard. Ensure that the cable is not pressed flat, it should be a teardrop shape.
 

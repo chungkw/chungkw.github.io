@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/markdown-satteri": "^0.4.6",
+    "astro": "^7.4.5",
+    "satteri-callouts": "^1.0.1"
   }
 }
