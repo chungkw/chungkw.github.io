@@ -10,17 +10,17 @@ For myself, I always wanted an automated way to back up my pictures and whatever
 
 I come to ask, what if I could have an automated way for my phone to push new files onto my PC on a daily schedule?
 
-#### Using SMB on Windows
+## Using SMB on Windows
 
 I have always used the SMB folder sharing feature in Windows, as a way to transfer and share files between computers and phones at home. Most devices support this protocol and it is easy to use.
 
-![SMB folder share setting on Windows](../../assets//smb_share.jpg)
+![SMB folder share setting on Windows](../../assets/simple-image-sync/smb_share.jpg)
 
-#### The App that I Neded
+## The app that I needed
 
 When I realised that what I really needed is actually something really simple, I went on the hunt for the right app. It took me no time before I discovered [FolderSync](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite).
 
-![FolderSync screenshot](../../assets/foldersync_home.jpg)
+![FolderSync screenshot](../../assets/simple-image-sync/foldersync_home.jpg)
 
 This incredible app allows me to send files from my phone to my PC in an automated way. It takes just a few steps to get things set up. For me, I have a very simple configuration to push new pictures from my phone camera folder to my PC's shared folder (called "To Right Folder" in the app). Just like this, I no longer have to worry much about having a copy of the pictures from my phone.
 
