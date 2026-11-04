@@ -2,6 +2,7 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import satteriCallouts from 'satteri-callouts';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,5 +36,8 @@ export default defineConfig({
                 })
             ]
         }),
-    }
+    },
+    integrations:[
+        mdx()
+    ]
 });

@@ -2,7 +2,8 @@
 import BaseLayout from "./BaseLayout.astro";
 
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+
+import { contacts } from "../content/contacts";
 
 import type { CollectionEntry } from "astro:content";
 
@@ -19,18 +20,28 @@ let createdAtStr = `${createdAt.getDate()}/${createdAt.getMonth() + 1}/${created
     <main class="container">
         <div class="d-flex justify-content-center">
             <article class="reading-width">
-                <h1>{title}</h1>
-
-                <p>{createdAtStr}</p>
-
-                <hr />
-
                 <slot />
             </article>
         </div>
     </main>
 
-    <Footer />
+    <footer class="container py-3">
+        <div class="p-3 border rounded rounded-3 bg-white text-center">
+            <p>Written by Kin Wai</p>
+
+            <div
+                class="d-flex gap-3 text-nowrap flex-wrap justify-content-center"
+            >
+                {
+                    contacts.map(({ name, icon, link }) => (
+                        <a href={link} class="text-reset text-decoration-none">
+                            <i class={`bi ${icon}`} /> {name}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </footer>
 </BaseLayout>
 
 <style>
