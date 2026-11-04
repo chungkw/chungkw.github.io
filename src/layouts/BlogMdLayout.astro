@@ -9,9 +9,7 @@ import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, createdAt } = Astro.props;
-
-let createdAtStr = `${createdAt.getDate()}/${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`;
+const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
