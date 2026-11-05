@@ -50,13 +50,18 @@ const { title } = Astro.props;
     </body>
 </html>
 
-<style>
+<style is:global>
     body {
         background-color: hsl(30, 30%, 95%);
         font-family: var(--font-inter);
     }
 
-    :global(h1, h2, h3, h4, h5, h6) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: var(--font-space-grotesk);
     }
 </style>

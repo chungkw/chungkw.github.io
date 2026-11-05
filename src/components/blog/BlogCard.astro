@@ -5,7 +5,7 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, createdAt } = Astro.props;
 
-let displayDate = new Date(createdAt).toLocaleDateString("en-SG");
+const displayDate = new Date(createdAt).toLocaleDateString("en-SG");
 ---
 
 <div class="mb-3 p-3 border rounded rounded-3 bg-white">
