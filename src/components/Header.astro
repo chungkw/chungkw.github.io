@@ -1,9 +1,15 @@
 ---
-import Navigation from "./Navigation.astro";
+import NavItem from "./NavItem.astro";
 ---
 
 <header class="container py-3 sticky-top">
-    <div class="p-2 border rounded rounded-3 shadow-sm bg-white">
-        <Navigation />
+    <div class="px-3 py-2 border rounded rounded-3 shadow-sm bg-white">
+        <nav>
+            <ul class="nav justify-content-center justify-content-md-start">
+                <NavItem href="/" text="About" icon="bi-person-circle" />
+                <NavItem href="/projects" text="Projects" icon="bi-braces" />
+                <NavItem href="/blog" text="Blog" icon="bi-bookmark" />
+            </ul>
+        </nav>
     </div>
 </header>
