@@ -14,7 +14,12 @@ const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
-<li class:list={["nav-item", { "border-bottom border-2 border-dark": isActive }]}>
+<li
+    class:list={[
+        "nav-item",
+        { "border-bottom border-2 border-dark": isActive },
+    ]}
+>
     <a
         class="nav-link text-reset p-2"
         href={href}
