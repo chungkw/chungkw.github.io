@@ -12,7 +12,7 @@ export const contacts: Contact[] = [
     },
     {
         name: "Email",
-        icon: "bi-envelope",
+        icon: "bi-envelope-fill",
         link: "mailto:chungkw28@gmail.com"
     }
 ];

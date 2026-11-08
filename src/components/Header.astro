@@ -1,15 +1,33 @@
 ---
 import NavItem from "./NavItem.astro";
+
+interface Props {
+    headerTitle?: string;
+}
+
+const { headerTitle = "Kin Wai" } = Astro.props;
 ---
 
 <header class="container py-3 sticky-top">
     <div class="px-3 py-2 border rounded rounded-3 shadow-sm bg-white">
-        <nav>
-            <ul class="nav justify-content-center justify-content-md-start">
-                <NavItem href="/" text="About" icon="bi-person-circle" />
-                <NavItem href="/projects" text="Projects" icon="bi-braces" />
-                <NavItem href="/blog" text="Blog" icon="bi-bookmark" />
-            </ul>
-        </nav>
+        <div
+            class="d-flex flex-row justify-content-center justify-content-md-between align-items-center"
+        >
+            <div class="d-none d-md-block p-2">
+                <span class="fw-bold">{headerTitle}</span>
+            </div>
+
+            <nav>
+                <ul class="nav">
+                    <NavItem href="/" text="About" icon="bi-person-circle" />
+                    <NavItem
+                        href="/projects"
+                        text="Projects"
+                        icon="bi-braces"
+                    />
+                    <NavItem href="/blog" text="Blog" icon="bi-bookmark" />
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>

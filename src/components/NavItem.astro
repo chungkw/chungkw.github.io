@@ -14,9 +14,9 @@ const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
-<li class:list={["nav-item", { "border-bottom border-black": isActive }]}>
+<li class:list={["nav-item", { "border-bottom border-2 border-dark": isActive }]}>
     <a
-        class="nav-link text-reset px-2"
+        class="nav-link text-reset p-2"
         href={href}
         aria-current={isActive ? "page" : undefined}
     >
