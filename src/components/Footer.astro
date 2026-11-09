@@ -1,0 +1,29 @@
+---
+import { contacts } from "../content/contacts";
+---
+
+<!-- For blog -->
+<footer class="container py-3">
+    <div class="py-2 px-3 border rounded rounded-3 bg-dark text-light">
+        <div class="row">
+            <div
+                class="col-12 col-md-auto flex-grow-1 py-1 text-center text-md-start"
+            >
+                Written by <span class="text-nowrap">Kin Wai</span>
+            </div>
+
+            {
+                contacts.map(({ name, icon, link }) => (
+                    <div class="col-6 col-sm-4 col-md-auto flex-grow-0 flex-sm-grow-1 flex-md-grow-0 py-1 text-center">
+                        <a href={link} class="text-reset text-decoration-none">
+                            <span class="me-1">
+                                <i class={`bi ${icon}`} />
+                            </span>
+                            {name}
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</footer>

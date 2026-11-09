@@ -9,24 +9,41 @@ const { headerTitle = "Kin Wai" } = Astro.props;
 ---
 
 <header class="container py-3 sticky-top">
-    <div class="px-3 py-2 border rounded rounded-3 shadow-sm bg-white">
-        <div
-            class="d-flex flex-row justify-content-center justify-content-md-between align-items-center"
-        >
-            <div class="d-none d-md-block p-2">
+    <div class="py-2 px-3 border rounded rounded-3 shadow-sm bg-white">
+        <div class="row align-items-center">
+            <div class="col flex-grow-1 py-1">
                 <span class="fw-bold">{headerTitle}</span>
             </div>
 
-            <nav>
-                <ul class="nav">
-                    <NavItem href="/" text="About" icon="bi-person-circle" />
-                    <NavItem
-                        href="/projects"
-                        text="Projects"
-                        icon="bi-braces"
-                    />
-                    <NavItem href="/blog" text="Blog" icon="bi-bookmark" />
-                </ul>
+            <div class="col-auto d-block d-md-none">
+                <button
+                    class="btn btn-dark"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navigation"
+                    aria-expanded="false"
+                    aria-controls="navigation"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <nav id="navigation" class="col-12 col-md-auto collapse d-md-block">
+                <div class="mt-1 m-md-0">
+                    <ul class="nav">
+                        <NavItem
+                            href="/"
+                            text="About"
+                            icon="bi-person-circle"
+                        />
+                        <NavItem
+                            href="/projects"
+                            text="Projects"
+                            icon="bi-braces"
+                        />
+                        <NavItem href="/blog" text="Blog" icon="bi-bookmark" />
+                    </ul>
+                </div>
             </nav>
         </div>
     </div>

@@ -16,7 +16,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 
 <li
     class:list={[
-        "nav-item",
+        "nav-item flex-basis-third flex-md-basis-auto align-self-stretch text-center",
         { "border-bottom border-2 border-dark": isActive },
     ]}
 >
@@ -25,7 +25,27 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
         href={href}
         aria-current={isActive ? "page" : undefined}
     >
-        <span class="me-1"><i class={`bi ${icon}`}></i></span>
+        <span class="d-none d-ss-inline me-1"><i class={`bi ${icon}`}></i></span
+        >
         <span class:list={["", { "fw-bold": isActive }]}>{text}</span>
     </a>
 </li>
+
+<style>
+    .flex-basis-third {
+        flex-basis: calc(100% / 3);
+    }
+
+    @media (min-width: 768px) {
+        .flex-md-basis-auto {
+            flex-basis: auto;
+        }
+    }
+
+    /* ss in between xs and sm */
+    @media (min-width: 370px) {
+        .d-ss-inline {
+            display: inline !important;
+        }
+    }
+</style>
