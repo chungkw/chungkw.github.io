@@ -2,6 +2,7 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import satteriCallouts from 'satteri-callouts';
+import satteriExternalLinks from "satteri-external-links"
 import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
@@ -33,6 +34,10 @@ export default defineConfig({
             hastPlugins: [
                 satteriCallouts({
                     theme: "docusaurus"
+                }),
+                satteriExternalLinks({
+                    rel: ["noopener", "noreferrer"],
+                    target: "_blank"
                 })
             ]
         }),
