@@ -37,7 +37,18 @@ export default defineConfig({
                 }),
                 satteriExternalLinks({
                     rel: ["noopener", "noreferrer"],
-                    target: "_blank"
+                    target: "_blank",
+                    content: {
+                        type: "element",
+                        tagName: "i",
+                        properties: {
+                            className: ["bi", "bi-box-arrow-up-right"]
+                        },
+                        children: []
+                    },
+                    properties: {
+                        className: ["icon-link"]
+                    }
                 })
             ]
         }),
