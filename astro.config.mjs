@@ -14,21 +14,29 @@ export default defineConfig({
             name: "Inter",
             cssVariable: "--font-inter",
             weights: ["300 700"],
-            provider: fontProviders.google()
+            provider: fontProviders.google(),
+            display: "swap",
+            fallbacks: ["sans-serif"]
         },
         {
             name: "Space Grotesk",
             cssVariable: "--font-space-grotesk",
             weights: ["300 700"],
-            provider: fontProviders.google()
+            provider: fontProviders.google(),
+            display: "swap",
+            fallbacks: ["sans-serif"]
         },
         {
             name: "JetBrains Mono",
             cssVariable: "--font-jetbrains-mono",
             provider: fontProviders.google(),
+            display: "swap",
             fallbacks: ["monospace"]
         }
     ],
+    image: {
+        layout: "constrained"
+    },
     markdown: {
         processor: satteri({
             hastPlugins: [
