@@ -3,16 +3,15 @@ import type { Project } from "../../content/projects";
 
 type Props = Project;
 
-const { title, icon, description, technologies, links } = Astro.props;
+const { title, Icon, description, technologies, links } = Astro.props;
 ---
 
 <div class="mb-3 p-3 border rounded rounded-3 bg-white">
     <div class="row">
         <div class="col">
-            <h3>
-                <span class="icon">
-                    <i class={`bi ${icon}`}></i>
-                </span>{title}
+            <h3 class="d-inline-flex gap-2">
+                <Icon />
+                {title}
             </h3>
         </div>
 
@@ -20,40 +19,38 @@ const { title, icon, description, technologies, links } = Astro.props;
             <p class="mb-2">{description}</p>
 
             <div class="d-flex flex-wrap gap-2 mb-2 text-nowrap">
-                {
-                    technologies.map((tech) => (
-                        <div class="badge rounded-pill text-bg-light border border-dark-subtle mono">
-                            {tech}
-                        </div>
-                    ))
-                }
+                {technologies.map((tech) => (
+                    <div class="badge rounded-pill text-bg-light border border-dark-subtle font-mono">
+                        {tech}
+                    </div>
+                ))}
             </div>
 
             <div class="d-flex gap-2 text-nowrap overflow-auto w-100">
-                {
-                    links.map(({ url, label }) => (
-                        <a
-                            href={url}
-                            class="btn btn-primary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {label}
-                        </a>
-                    ))
-                }
+                {links.map(({ url, label }) => (
+                    <a
+                        href={url}
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {label}
+                    </a>
+                ))}
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    .icon {
-        margin-right: 0.4rem;
-        vertical-align: text-bottom;
+    h3 .bi {
+        margin-top: 1px;
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
     }
 
-    .mono {
+    .font-mono {
         font-family: var(--font-jetbrains-mono);
     }
 </style>

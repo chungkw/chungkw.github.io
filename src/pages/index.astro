@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Header from "../components/Header.astro";
 import Pop from "../components/Popover.astro";
-import ContactAnchor from "../components/about/ContactAnchor.astro";
 
 import { contacts } from "../content/contacts";
 ---
@@ -40,8 +39,11 @@ import { contacts } from "../content/contacts";
                     <hr />
 
                     <div class="d-flex gap-2 text-nowrap flex-wrap">
-                        {contacts.map((contact) => (
-                            <ContactAnchor {...contact} />
+                        {contacts.map(({ name, Icon, link }) => (
+                            <a href={link} class="btn btn-dark icon-link">
+                                <Icon />
+                                {name}
+                            </a>
                         ))}
                     </div>
                 </div>

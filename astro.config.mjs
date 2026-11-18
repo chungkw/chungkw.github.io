@@ -46,14 +46,42 @@ export default defineConfig({
                 satteriExternalLinks({
                     rel: ["noopener", "noreferrer"],
                     target: "_blank",
+                    // this plugin adds a really annoying <span> wrapped around the contents below
+                    // this is applied on that <span>
+                    contentProperties: { style: "display: contents;" },
                     content: {
                         type: "element",
-                        tagName: "i",
+                        tagName: "svg",
                         properties: {
-                            className: ["bi", "bi-box-arrow-up-right"]
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "16",
+                            height: "16",
+                            fill: "currentColor",
+                            className: ["bi", "bi-box-arrow-up-right"],
+                            viewBox: "0 0 16 16"
                         },
-                        children: []
+                        children: [
+                            {
+                                type: "element",
+                                tagName: "path",
+                                properties: {
+                                    fillRule: "evenodd",
+                                    d: "M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
+                                },
+                                children: []
+                            },
+                            {
+                                type: "element",
+                                tagName: "path",
+                                properties: {
+                                    fillRule: "evenodd",
+                                    d: "M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
+                                },
+                                children: []
+                            }
+                        ]
                     },
+                    // this is applied on the generated <a>
                     properties: {
                         className: ["icon-link"]
                     }

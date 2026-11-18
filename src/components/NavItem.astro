@@ -1,11 +1,9 @@
 ---
 interface Props {
     href: string;
-    text: string;
-    icon: string;
 }
 
-const { href, text, icon } = Astro.props;
+const { href } = Astro.props;
 
 // From the Astro blog template
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
@@ -25,9 +23,9 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
         href={href}
         aria-current={isActive ? "page" : undefined}
     >
-        <span class="d-none d-ss-inline me-1"><i class={`bi ${icon}`}></i></span
-        >
-        <span class:list={["", { "fw-bold": isActive }]}>{text}</span>
+        <div class:list={["icon-link", { "fw-bold": isActive }]}>
+            <slot />
+        </div>
     </a>
 </li>
 
@@ -41,11 +39,12 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
             flex-basis: auto;
         }
     }
+</style>
 
-    /* ss in between xs and sm */
-    @media (min-width: 370px) {
-        .d-ss-inline {
-            display: inline !important;
+<style is:global>
+    @media (width < 368px) {
+        .nav-link .icon-link > svg {
+            display: none;
         }
     }
 </style>

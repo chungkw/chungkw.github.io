@@ -1,18 +1,23 @@
+import type { SvgComponent } from "astro/types";
+
+import IconGithub from "bootstrap-icons/icons/github.svg";
+import IconEnvelop from "bootstrap-icons/icons/envelope-fill.svg";
+
 export interface Contact {
     name: string;
-    icon: string;
+    Icon: SvgComponent;
     link: string;
 }
 
 export const contacts: Contact[] = [
     {
         name: "GitHub",
-        icon: "bi-github",
+        Icon: IconGithub,
         link: "https://github.com/chungkw"
     },
     {
         name: "Email",
-        icon: "bi-envelope-fill",
+        Icon: IconEnvelop,
         link: "mailto:chungkw28@gmail.com"
     }
 ];
